@@ -74,6 +74,13 @@ $fonts-path: "https://fonts.gstatic.com/s/worksans/v2";
 
 @import '~grommet/scss/grommet-core/index';
 
-.center-align{
+/* Global style
+------------------------*/
+
+.center-align {
   text-align: center;
+  padding: 1em;
+}
+.title-color {
+  color: #49516f;
 }
