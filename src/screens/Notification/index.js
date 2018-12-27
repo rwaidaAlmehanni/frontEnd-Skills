@@ -7,7 +7,9 @@ import Accordion from 'grommet/components/Accordion';
 import AccordionPanel from 'grommet/components/AccordionPanel';
 import NotificationEx1 from "../../components/NotificationEx1";
 import Button from 'grommet/components/Button';
+import Columns from 'grommet/components/Columns';
 import Paragraph from 'grommet/components/Paragraph';
+
 import MenuIcon from "grommet/components/icons/base/Menu";
 import CloseIcon from "grommet/components/icons/base/Close";
 
@@ -79,9 +81,17 @@ class Notification extends Component {
     return (
       <Box full={true} colorIndex={'light-2'}>
         <Article primary={true}>
-          <h1 className={'center-align'}>Notification</h1>
+          <h1 className={'center-align title-color'} >Notification</h1>
           <Box style={{padding:'1em'}}>
-            <h3> UI/UX:</h3>
+            <Columns maxCount={3} masonry={true} size={'large'} full={true} >
+              <Box align='start' pad={{horizontal:'large'}}>
+                <h3> UI/UX:</h3>
+              </Box>
+              <Box/>
+              <Box align='end'>
+                <Button  primary={true} label='Back' href='/'/>
+              </Box>
+            </Columns>
             <Box colorIndex={'light-1'} pad={'large'} margin={'large'}>
               <Paragraph>
                 <b>*What are notifications ?</b><br/>
@@ -102,24 +112,27 @@ class Notification extends Component {
                 3-location of displaying this message.<br/>
               </Paragraph>
             </Box>
-          </Box>
-          <Box margin={'large'}>
-            <h3> Pure CSS:</h3>
-            <Accordion style={{backgroundColor:'#fff'}}>
-              <AccordionPanel  heading={<NotificationEx1/>} align={'center'}>
-                <Box margin={'large'}>
-                  <Paragraph>
-                    {this._Code().split('\n').map((c,i)=>{
-                      return (<div>{c}</div>)
-                    })}
-                  </Paragraph>
-                </Box>
-              </AccordionPanel>
-            </Accordion>
-          </Box>
-          <Box colorIndex={'light-1'} pad={'large'} margin={'large'}>
-            <a href={'https://material-ui.com/demos/snackbars/'}><h3> Material UI Component</h3></a>
-             <a href={'https://v1.grommet.io/docs/notification'}><h3> Grommet Component</h3></a>
+            <Box margin={'large'}>
+              <h3> Pure CSS:</h3>
+              <Accordion style={{backgroundColor:'#fff'}}>
+                <AccordionPanel  heading={<NotificationEx1/>} align={'center'}>
+                  <Box margin={'large'}>
+                    <Paragraph>
+                      {this._Code().split('\n').map((c,i)=>{
+                        return (<div>{c}</div>)
+                      })}
+                    </Paragraph>
+                  </Box>
+                </AccordionPanel>
+              </Accordion>
+            </Box>
+            <Box margin={'large'}>
+              <h3> Components:</h3>
+              <Box colorIndex={'light-1'} pad={'large'}>
+                <a href={'https://material-ui.com/demos/snackbars/'}><h3> Material UI Component</h3></a>
+                <a href={'https://v1.grommet.io/docs/notification'}><h3> Grommet Component</h3></a>
+              </Box>
+            </Box>
           </Box>
         </Article>
       </Box>

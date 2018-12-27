@@ -7,6 +7,7 @@ import Split from 'grommet/components/Split';
 
 import NavSidebar from '../../components/NavSidebar';
 import Notification from '../Notification';
+import Dashboard from '../Dashboard';
 
 
 class Main extends Component {
@@ -34,6 +35,7 @@ class Main extends Component {
           <Router>
             <Switch>
               <Route component={Notification} path="/notification"/>
+              <Route component={Dashboard} path="/"/>
             </Switch>
           </Router>
         </Split>
